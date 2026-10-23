@@ -1,0 +1,16 @@
+﻿@model practical7.Models.Feedback
+
+@{
+    ViewData["Title"] = "Feedback Submitted";
+}
+
+<h2>Feedback Submitted Successfully!</h2>
+<p>Thank you for your feedback.</p>
+
+<partial name="_FeedbackDetails" model="Model" />
+
+<br />
+
+<a asp-controller="Feedback" asp-action="Create">
+    Submit Another Feedback
+</a>

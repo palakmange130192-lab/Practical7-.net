@@ -1,0 +1,34 @@
+﻿@model practical7.Models.Feedback
+
+@{
+    ViewData["Title"] = "Feedback Form";
+}
+
+<h2>Feedback Form</h2>
+
+<form asp-controller="Feedback" asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+
+    <p>Name</p>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+
+    <p>Email</p>
+    <input asp-for="Email" />
+    <span asp-validation-for="Email"></span>
+
+    <p>Rating (1 to 5)</p>
+    <input asp-for="Rating" type="number" min="1" max="5" />
+    <span asp-validation-for="Rating"></span>
+
+    <p>Comments</p>
+    <textarea asp-for="Comments"></textarea>
+    <span asp-validation-for="Comments"></span>
+
+    <br /><br />
+    <button type="submit">Submit Feedback</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
